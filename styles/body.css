@@ -74,4 +74,8 @@ main {
         margin-inline: auto;
         margin-top: 1rem;
     }
+
+    main {
+        height: 100%;
+    }
 }
