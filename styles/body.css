@@ -1,5 +1,5 @@
 
-#proj {
+#layout-projeto {
     display: grid;
     grid-template-columns: 30% 70%;
     background-color: #1E1E1E;
@@ -8,36 +8,39 @@
     height: 100vh;
 }
 
+aside, main {
+    margin-block: 1.25rem;
+    border-radius: .75rem;
+}
+
 aside {
     margin-left: auto;
     background-image: url(../assets/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: .75rem;
-    margin-block: 1.25rem;
-width: 25rem;
-height: 41.5rem;
+    max-width: 25rem;
+    height: 41.5rem;
 
-header {
-margin: 2rem;
+    header {
+        margin: 2rem;
 
-img {
-height: 3rem;
-margin-bottom: 1rem;
-}
+        img {
+            height: 3rem;
+            margin-bottom: 1rem;
+        }
 
-h1 {
-    font: 400 2.5rem var(--font-lecker);
-    color: #FF598B;
-    margin-bottom: .25rem;
-}
+        h1 {
+            font: 400 2.5rem var(--font-lecker);
+            color: #FF598B;
+            margin-bottom: .25rem;
+        }
 
-span {
-    color: var(--text-head);
-    font: var(--body-md);
-}
+        span {
+            color: var(--text-head);
+            font: var(--body-md);
+        }
 
-}
+    }
 
 
 }
@@ -46,14 +49,29 @@ main {
     height: 42rem;
     overflow: auto;
     background-color: var(--shape-body);
-    margin-block: 1.25rem;
-border-radius: .75rem;
-width: 98%;
+    width: 98%;
 
-h1 {
-color: var(--text-head);
-font: var(--head-md);
-margin-inline: 8.125rem;
-padding-block: 5rem 2.5rem;
+    h1 {
+        color: var(--text-head);
+        font: var(--head-md);
+        margin-inline: 8.125rem;
+        padding-block: 5rem 2.5rem;
+    }
 }
+
+@media (width < 1024px) {
+    #layout-projeto {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    aside, main {
+        margin-block: 0;
+    }
+
+    aside {
+        margin-inline: auto;
+        margin-top: 1rem;
+    }
 }
