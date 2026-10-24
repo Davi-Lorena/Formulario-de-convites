@@ -50,6 +50,7 @@
   display: grid;
   align-items: center;
   border: 1px solid var(--input-stroke);
+  transition: all 300ms ease;
 
   & img {
     border-radius: 0.25rem;

@@ -9,7 +9,5 @@ Feito como um desafio prático da trilha Fullstack, da Rocketseat, possibilitari
 
  ## Sobre o desenvolvimento do projeto
   Elaboração de um formulário com inputs do tipo text, radio, checkbox, datetime-local, file, e-mail e tel e sua estilização por meio do CSS, aplicando propriedades estudadas até então para definir as posições, tamanho e temática dos elementos. Além disso, foi colocado em prática a elaboração de um layout para delimitar os espaços do forms e da imagem de capa.
-  O projeto ainda não apresenta responsividade para telas mobile, adaptado, somente, para desktop.
-  ### Planejamento futuro:
-  Aplicação da responsividade e captura de dados para que o convite seja, de fato, gerado.
+  O layout se adapta a telas desktop, tablets e celulares. A captura de dados para que o convite seja, de fato, gerado ainda está no planejamento futuro.
   

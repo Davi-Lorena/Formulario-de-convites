@@ -1,10 +1,14 @@
 form {
-  margin-inline: 8.125rem;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
 
   fieldset {
     border: none;
     display: grid;
     gap: 1rem;
+    min-width: 0;
 
     legend {
       display: flex;
@@ -81,7 +85,7 @@ fieldset + fieldset {
   margin-top: 3rem;
 }
 
-#event {
+#sobre-o-evento {
   label {
     color: var(--text-body);
     font: 400 var(--body-sm);
@@ -89,13 +93,16 @@ fieldset + fieldset {
 
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
+    min-width: 0;
 
     & input[type="datetime-local"] {
       text-transform: uppercase;
       color: var(--input-placeholder);
       font: 400 var(--body-md);
+      min-width: 0;
+
       &::-webkit-calendar-picker-indicator {
         opacity: 0;
       }
@@ -103,12 +110,13 @@ fieldset + fieldset {
 
     .radio {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       border: 1px solid var(--input-stroke);
-      height: 3rem;
+      min-height: 3rem;
       border-radius: 0.5rem;
       background-color: var(--input-base);
       margin-top: 0.75rem;
+      min-width: 0;
 
       .radio-select {
         display: flex;
@@ -116,8 +124,20 @@ fieldset + fieldset {
         justify-content: center;
         position: relative;
         gap: 0.5rem;
+        min-width: 0;
+        min-height: 2.25rem;
+        padding: 0.35rem;
+        margin: 0.25rem;
+        transition: all 300ms ease-out;
+
+        label {
+          min-width: 0;
+          text-align: center;
+          overflow-wrap: anywhere;
+        }
 
         & svg {
+          flex: 0 0 auto;
           object-fit: cover;
           aspect-ratio: 1/1;
         }
@@ -126,15 +146,15 @@ fieldset + fieldset {
         & input:hover,
         & input:focus {
           position: absolute;
+          inset: 0;
           appearance: none;
-          height: 3rem;
+          height: 100%;
           width: 100%;
           cursor: pointer;
         }
 
         &:has(:checked) {
           border-radius: 0.25rem;
-          margin: 0.25rem;
           color: var(--text-head);
           background-color: var(--shape-button);
 
@@ -151,12 +171,13 @@ fieldset + fieldset {
   }
 
   & textarea {
-    overflow: hidden;
     height: 8.5rem;
+    min-height: 8.5rem;
+    resize: vertical;
   }
 }
 
-#style {
+#personalizacao {
   label {
     font: 400 var(--body-sm);
     color: var(--text-head);
@@ -164,7 +185,8 @@ fieldset + fieldset {
 
   .flex {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 0.75rem;
     margin-block: 1rem 1.75rem;
   }
@@ -178,6 +200,7 @@ fieldset + fieldset {
     height: 3rem;
     border-radius: 50%;
     background-color: var(--shape-button);
+    transition: all 300ms ease;
 
     & .color-radio {
       width: 2rem;
@@ -208,18 +231,20 @@ fieldset + fieldset {
   .grid {
     margin-top: 1rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
   }
 
   #light-plan {
     display: flex;
-    gap: 6.5rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.5rem 3rem;
   }
 
   .bright {
     min-width: 11rem;
-    padding-right: 3.5rem;
+    padding-right: 0;
     & label {
       display: block;
       color: var(--text-body);
@@ -260,6 +285,7 @@ fieldset + fieldset {
       height: 2rem;
       border-radius: 999px;
       border: 1px solid var(--input-stroke);
+      transition: all 400ms ease;
 
       & input {
         all: unset;
@@ -270,6 +296,7 @@ fieldset + fieldset {
         border-radius: 50%;
         margin: 0.25rem;
         cursor: pointer;
+        transition: all 400ms ease;
       }
 
       &:has(:checked) {
@@ -293,6 +320,7 @@ fieldset + fieldset {
   .docfile {
     margin-top: 0.75rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.75rem;
     position: relative;
@@ -311,6 +339,8 @@ fieldset + fieldset {
       font: 400 var(--body-sm);
       color: var(--text-head);
 
+      transition: all 200ms ease-out;
+
       &:hover {
         background-color: var(--shape-hover);
 
@@ -322,6 +352,9 @@ fieldset + fieldset {
 
     & input {
       all: unset;
+      min-width: 0;
+      max-width: 100%;
+
       &::file-selector-button {
         display: none;
       }
@@ -378,7 +411,7 @@ fieldset + fieldset {
   }
   & .colum {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
     margin-top: 1rem;
   }
@@ -404,7 +437,7 @@ fieldset + fieldset {
 
   & .align {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75rem;
   }
 
@@ -413,6 +446,7 @@ fieldset + fieldset {
     position: relative;
     height: 1.25rem;
     width: 1.25rem;
+    flex: 0 0 1.25rem;
     border: 1px solid var(--input-stroke);
     border-radius: 0.25rem;
 
@@ -440,10 +474,12 @@ fieldset + fieldset {
   background-color: var(--brand-dark);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   padding: 0.75rem 1.25rem;
   height: 3rem;
-  width: 11rem;
+  width: fit-content;
+  max-width: 100%;
   border-radius: 0.5rem;
   cursor: pointer;
   & img {
@@ -462,5 +498,30 @@ fieldset + fieldset {
   }
 }
 
+@media (width < 1024px) {
+  #personalizacao {
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+
 @media (width < 600px) {
+  #sobre-o-evento .grid,
+  #data .colum {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #personalizacao .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #checks .align {
+    gap: 0.625rem;
+  }
+
+  #upload {
+    margin-block: 2rem;
+    margin-inline: 0 0;
+  }
 }

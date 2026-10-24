@@ -1,25 +1,28 @@
 
 #layout-projeto {
     display: grid;
-    grid-template-columns: 30% 70%;
-    background-color: #1E1E1E;
-    gap: 1.25rem;
-    overflow: hidden;
+    grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 1.8fr);
+    background-color: #1e1e1e;
+    gap: clamp(1rem, 3vw, 2rem);
     height: 100vh;
+    min-height: 0;
+    padding: clamp(1rem, 2.5vw, 2rem);
+    overflow: hidden;
 }
 
 aside, main {
-    margin-block: 1.25rem;
-    border-radius: .75rem;
+    margin: 0;
+    border-radius: 0.75rem;
 }
 
 aside {
-    margin-left: auto;
     background-image: url(../assets/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    max-width: 25rem;
-    height: 41.5rem;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
 
     header {
         margin: 2rem;
@@ -41,21 +44,24 @@ aside {
         }
 
     }
-
-
 }
 
 main {
-    height: 42rem;
-    overflow: auto;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
     background-color: var(--shape-body);
-    width: 98%;
+    width: 100%;
+    padding: clamp(1.5rem, 5vw, 5rem);
 
     h1 {
         color: var(--text-head);
         font: var(--head-md);
-        margin-inline: 8.125rem;
-        padding-block: 5rem 2.5rem;
+        margin: 0;
+        padding-block: 0 2.5rem;
     }
 }
 
@@ -63,19 +69,44 @@ main {
     #layout-projeto {
         display: flex;
         flex-direction: column;
-        height: 100%;
-    }
-
-    aside, main {
-        margin-block: 0;
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
     }
 
     aside {
-        margin-inline: auto;
-        margin-top: 1rem;
+        max-width: none;
+        min-height: 16rem;
+        height: auto;
+        background-position: bottom;
     }
 
     main {
-        height: 100%;
+        height: auto;
+        min-height: auto;
+        overflow: visible;
+    }
+}
+
+@media (width < 600px) {
+    #layout-projeto {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    aside {
+        min-height: 13rem;
+
+        header {
+            margin: 1.5rem;
+        }
+    }
+
+    main {
+        padding: 1.25rem;
+
+        h1 {
+            padding-bottom: 1.5rem;
+        }
     }
 }
