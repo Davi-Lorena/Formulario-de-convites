@@ -1,91 +1,87 @@
 .col1 {
-    background-color: var(--brand-light);
+  background-color: var(--brand-light);
 }
 
 .col2 {
-    background-color: #6A59FF;
+  background-color: #6a59ff;
 }
 
 .col3 {
-    background-color: #B259FF;
+  background-color: #b259ff;
 }
 
 .col4 {
-    background-color: #FF59F9;
+  background-color: #ff59f9;
 }
- 
+
 .col5 {
-    background-color: #FF598B;
+  background-color: #ff598b;
 }
 
 .col6 {
-    background-color: #FF5959;
+  background-color: #ff5959;
 }
 
 .col7 {
-    background-color: #FF8B59;
+  background-color: #ff8b59;
 }
 
 .col8 {
-    background-color: #FFCD59;
+  background-color: #ffcd59;
 }
 
 .col9 {
-    background-color: #E1FF59;
+  background-color: #e1ff59;
 }
 
 .col10 {
-    background-color: #59FF91;
+  background-color: #59ff91;
 }
 
 .col11 {
-    background-color: #59FFF9;
+  background-color: #59fff9;
 }
 
 .card {
-    background-color: var(--shape-button);
-    /* height: 6.5rem; */
-border-radius: .5rem;
-position: relative;
-display: grid;
-align-items: center;
-border: 1px solid var(--input-stroke);
+  background-color: var(--shape-button);
+  /* height: 6.5rem; */
+  border-radius: 0.5rem;
+  position: relative;
+  display: grid;
+  align-items: center;
+  border: 1px solid var(--input-stroke);
+  transition: all 300ms ease;
 
-& img {
-    border-radius: .25rem;
-   margin: .25rem;
-   width: 95%;
-   object-fit: cover;
-}
+  & img {
+    border-radius: 0.25rem;
+    margin: 0.25rem;
+    width: 95%;
+    object-fit: cover;
+  }
 
-label {
+  label {
     font: 400 var(--body-sm);
     color: var(--text-head);
-display: block;
-margin-inline: auto;
-margin-block: .25rem .5rem;
+    display: block;
+    margin-inline: auto;
+    margin-block: 0.25rem 0.5rem;
+  }
 
-
-
-}
-
-
-& input {
+  & input {
     all: unset;
     appearance: none;
-     position: absolute;
+    position: absolute;
     cursor: pointer;
     width: 100%;
     height: 100%;
+  }
 
-}
-
-&:hover, &:focus-within {
+  &:hover,
+  &:focus-within {
     background-color: var(--shape-hover);
-}
+  }
 
-&:has(:checked) {
+  &:has(:checked) {
     border: 2px solid var(--brand-light);
-}
-
+  }
 }
